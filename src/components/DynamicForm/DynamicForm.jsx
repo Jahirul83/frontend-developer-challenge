@@ -1,21 +1,36 @@
-
+import React, { useState } from 'react';
 
 const DynamicForm = () => {
+    const [fields, setFields] = useState([{ input: '', select: '' }]);
+   
+    const handleAdd = () => {
+        setFields([...fields, { input: '', select: '' }]);
+    };
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center">
-            {/* input */}
-            <div className="flex justify-center items-center p-2">
-                <h1 className="m-1">Name:</h1>
-                <input type="text" placeholder="Name" className="input" />
-            </div>
-            {/* selection */}
-            <div className="flex justify-between items-center p-2">
-                <h1 className="m-2">Gender:</h1>
-                <select defaultValue="Gender" className="select w-11/12">
-                    <option disabled={true}>Gender</option>
-                    <option value="male">male</option>
-                    <option value="female">female</option>
-                </select>
+        <div className='flex items-center justify-center'>
+            <div>
+                {fields.map((field, index) => (
+                    <div key={index} className="flex gap-4 mb-2">
+                        <input
+                            placeholder='name'
+                            className='input'
+                            type="text"
+                            value={field.input}
+
+                        />
+
+                        <select className="select"
+                            value={field.select}
+
+                        >
+                            <option value="">Select</option>
+                            <option value="Option1">Option 1</option>
+                            <option value="Option2">Option 2</option>
+                        </select>
+                        <button className='btn btn-error text-white'>Delete</button>
+                    </div>
+                ))}
+                <button className='btn' onClick={handleAdd}>+ Add more</button>
             </div>
         </div>
     );
