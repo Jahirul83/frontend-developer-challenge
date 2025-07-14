@@ -4,7 +4,7 @@ const DynamicForm = () => {
     const [fields, setFields] = useState([{ id: 1, input: '', select: '', errors: {} }]);
     const [nextId, setNextId] = useState(2);
     // const [error, setError] = useState([]);
-    const [submitted, setSubmitted] = useState([]);
+    const [submitted, setSubmitted] = useState(false);
 
     const handleAdd = () => {
         setFields([...fields, { id: nextId + 1, input: '', select: '', errors: {} }]);
@@ -60,9 +60,10 @@ const DynamicForm = () => {
                                     name='name'
                                     className='input'
                                     type="text"
+                                    placeholder='Enter name'
                                     onChange={e => handleChange(field.id, 'input', e.target.value)}
                                 />
-                                {field.errors.input && <div style={{ color: 'red' }}>{field.errors.input}</div>}
+                                {field.errors.input && <div className='text-red-500'>{field.errors.input}</div>}
                             </div>
 
                             <div>
@@ -71,24 +72,49 @@ const DynamicForm = () => {
                                     onChange={e => handleChange(field.id, 'select', e.target.value)}
                                 >
                                     <option value="">Select</option>
-                                    <option value="Option1">Option 1</option>
-                                    <option value="Option2">Option 2</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
-                                {field.errors.select && <div style={{ color: 'red' }}>{field.errors.select}</div>}
+                                {field.errors.select && <div className='text-red-500'>{field.errors.select}</div>}
                             </div>
                             <button onClick={() => handleDelete(field.id)} className='btn btn-error text-white'>Delete</button>
                         </div>
                     ))}
-                    <button type='button' className='btn' onClick={handleAdd}>+ Add more</button>
+                    <button type='button' className='btn btn-success text-white mr-2' onClick={handleAdd}>+ Add more</button>
                     <button type='submit' className='btn btn-primary'>submit</button>
                 </form>
             </div>
+            {/* Display state in h3 tags */}
             <div className='mt-5'>
                 <h3>Form State</h3>
                 {fields.map(field => (
                     <h3 key={field.id}>Input: {field.input} | Select: {field.select}</h3>
                 ))}
             </div>
+            {/* Display table if submitted */}
+            {submitted && (
+                <div className="mt-6">
+                    <h2 className="text-xl font-bold mb-2">Submitted Table:</h2>
+                    <table className="min-w-full table-auto border border-gray-300">
+                        <thead>
+                            <tr className="bg-gray-100">
+                                <th className="border p-2">#</th>
+                                <th className="border p-2">Name</th>
+                                <th className="border p-2">Gender</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {fields.map((field, index) => (
+                                <tr key={field.id}>
+                                    <td className="border p-2">{index + 1}</td>
+                                    <td className="border p-2">{field.input}</td>
+                                    <td className="border p-2">{field.select}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
         </div>
     );
 };
