@@ -9,7 +9,7 @@ This project is a submission for the Front-end Intern position assignment at **6
 
 ## 🖼️ Project Preview
 
-![Project Screenshot]([https://your-image-link.com/screenshot.png](https://github.com/Jahirul83/frontend-developer-challenge/blob/b68110afd46438e35ce5f78d616990d468d9ffb6/public/Capture.PNG))  
+![Project Screenshot](https://github.com/Jahirul83/frontend-developer-challenge/blob/b68110afd46438e35ce5f78d616990d468d9ffb6/public/Capture.PNG)
 
 ## 🛠️ Tech Stack
 
