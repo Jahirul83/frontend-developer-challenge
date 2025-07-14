@@ -1,12 +1,40 @@
-# React + Vite
+# Frontend Developer Challenge – 6sense Technologies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a submission for the Front-end Intern position assignment at **6sense Technologies**. It demonstrates my ability to create responsive, user-friendly, and functional web applications using modern frontend technologies.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Click here to view the live project](https://frontend-developer-challenge1.netlify.app/)  
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖼️ Project Preview
+
+![Project Screenshot](https://your-image-link.com/screenshot.png)  
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **Tailwind CSS**
+- **JavaScript (ES6+)**
+- **HTML5 & CSS3**
+- **Vite** 
+
+
+## ✅ Features
+
+- Responsive and clean UI
+- Component-based structure
+- Functional form validations (if applicable)
+- Dark/light mode toggle (if implemented)
+- Smooth user experience and interactions
+
+## 🚀 Getting Started
+
+To run the project locally:
+
+```bash
+git clone https://github.com/Jahirul83/frontend-developer-challenge.git
+cd frontend-developer-challenge
+npm install
+npm run dev
+
